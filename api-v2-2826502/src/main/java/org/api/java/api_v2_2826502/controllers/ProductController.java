@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -50,7 +51,12 @@ public class ProductController {
                                            BindingResult bindingResult){ //BindingResul siempre despues deñ requestBody
         if (bindingResult.hasErrors()){
             //Si existe erroes de validacion en los datos del body tonces :
-            return  ResponseEntity.badRequest().body("Errores de validacion "); // ARBOLES DE DESICION
+            //return  ResponseEntity.badRequest().body("Errores de validacion "); // ARBOLES DE DESICION
+            List<String> erroresValidacion = new ArrayList<>();
+            bindingResult.getFieldErrors().forEach(error -> {
+                erroresValidacion.add(error.getDefaultMessage());
+            });
+            return ResponseEntity.badRequest().body(erroresValidacion);
         }
         try {
             return  ResponseEntity.status(HttpStatus.CREATED) // 201 Se creo el producto

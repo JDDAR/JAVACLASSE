@@ -23,7 +23,8 @@ public class Product {
     @NotEmpty(message = "El nombre No puede estar bacio ")
     private  String name;
 
-    //@Size(min=10, max=50, message = "El numero de caracteries excritos estan fuera de rango 10 - 50 caracteres")
+    @Size(min=10, max=50, message = "El numero de caracteries excritos estan fuera de rango 10 - 50 caracteres")
+    @NotEmpty(message = "No deben estar vacio")
     private String description;
 
     //@NotNull

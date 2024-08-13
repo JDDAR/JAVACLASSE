@@ -1,0 +1,23 @@
+meta {
+  name: actualizar productos
+  type: http
+  seq: 2
+}
+
+put {
+  url: http://localhost:8081/api/products/2
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "cambio de nombre",
+    "description": "cambio descripcion",
+    "price": 10.0
+  }
+}

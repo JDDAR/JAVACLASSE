@@ -1,0 +1,23 @@
+meta {
+  name: crear producto
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8081/api/products
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name" : "Celular 02",
+    "description": "de carga rapida lalalalla",
+    "price": 80.9
+  }
+}

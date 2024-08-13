@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "api_products_2826502_bruno",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

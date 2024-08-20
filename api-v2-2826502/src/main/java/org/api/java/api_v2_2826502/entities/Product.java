@@ -8,58 +8,57 @@ import lombok.*;
 @AllArgsConstructor
 @Getter
 @Setter
-@ToString   
+@ToString
 @Entity
-@Table(name="products")
+@Table(name = "products")
 
 public class Product {
 
-    @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    @NotBlank(message = "El nombre No debe tener espacios en blanco")
-    @NotEmpty(message = "El nombre No puede estar bacio ")
-    private  String name;
+  @NotBlank(message = "El nombre No debe tener espacios en blanco")
+  @NotEmpty(message = "El nombre No puede estar bacio ")
+  private String name;
 
-    @Size(min=10, max=50, message = "El numero de caracteries excritos estan fuera de rango 10 - 50 caracteres")
-    @NotEmpty(message = "No deben estar vacio")
-    private String description;
+  @Size(min = 100, max = 500, message = "El numero de caracteries excritos estan fuera de rango 100 - 1000 caracteres")
+  @NotEmpty(message = "No deben estar vacio")
+  private String description;
 
-    //@NotNull
-    //@Min(50)
-    private  Double price;
+  // @NotNull
+  // @Min(50)
+  private Double price;
 
-    public Long getId() {
-        return id;
-    }
+  public Long getId() {
+    return id;
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public String getName() {
-        return name;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getDescription() {
-        return description;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public Double getPrice() {
-        return price;
-    }
+  public Double getPrice() {
+    return price;
+  }
 
-    public void setPrice(Double price) {
-        this.price = price;
-    }
+  public void setPrice(Double price) {
+    this.price = price;
+  }
 }

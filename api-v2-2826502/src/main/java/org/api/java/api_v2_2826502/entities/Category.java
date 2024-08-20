@@ -2,6 +2,8 @@ package org.api.java.api_v2_2826502.entities;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "categories")
 public class Category {
 
   @Id

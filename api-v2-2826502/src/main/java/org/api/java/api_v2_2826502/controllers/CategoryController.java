@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.swing.text.html.Option;
+
 @RestController
 @RequestMapping("/api")
 public class CategoryController {
@@ -53,6 +55,18 @@ public class CategoryController {
       return ResponseEntity.status(HttpStatus.CREATED).body(categorieService.save(category));
     } catch (Exception e) {
       return ResponseEntity.badRequest().body("Error Creando El producto ");
+    }
+  }
+
+  // Endpoint - ACTUALIZAR CATEGORIA ********************************
+  @PutMapping("/categories/{id}")
+  public ResponseEntity<?> actializarCategoria(@RequestBody Category category, @PathVariable Long id) {
+    Optional<Category> cateAct = categorieService.actualizarCategoria(category, id);
+
+    if (cateAct.isPresent()) {
+      return ResponseEntity.ok().body(cateAct.get());
+    } else {
+      return ResponseEntity.badRequest().body("La categoria con id : " + id + "No se pudo actualizar");
     }
   }
 

@@ -32,4 +32,23 @@ public class CategoryService {
     return repository.save(category);
   }
 
+  // ACTUALIZAR CATEGORIA POR AID ************************************
+  @Transactional
+  public Optional<Category> actualizarCategoria(Category category, Long id) {
+    // Verificar si esta la categoria por id
+    Optional<Category> cateUpd = this.findById(id);
+
+    if (cateUpd.isPresent()) {
+      Category actualizar = cateUpd.get();
+      actualizar.setName(category.getName());
+      actualizar.setDescription(category.getDescription());
+
+      repository.save(actualizar);
+
+      return Optional.of(actualizar);
+    } else {
+      return cateUpd;
+    }
+  }
+
 }

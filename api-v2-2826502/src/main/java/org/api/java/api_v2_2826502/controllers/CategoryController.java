@@ -14,8 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import javax.swing.text.html.Option;
-
 @RestController
 @RequestMapping("/api")
 public class CategoryController {
@@ -67,6 +65,22 @@ public class CategoryController {
       return ResponseEntity.ok().body(cateAct.get());
     } else {
       return ResponseEntity.badRequest().body("La categoria con id : " + id + "No se pudo actualizar");
+    }
+  }
+
+  // ENDPOINT ELIMINAR CATEGORIA **************************************
+  @DeleteMapping("/categories/{id}")
+  public ResponseEntity<?> eliminarCategoria(@PathVariable Long id) {
+    try {
+      boolean isEliminarCategoria = categorieService.eliminarCategoria(id);
+      if (isEliminarCategoria) {
+        return ResponseEntity.ok().body("Categoria con id : " + id + " Eliminado satisfactoriamente");
+      } else {
+        return ResponseEntity.badRequest().body("la categoria no existe en la base de datos....");
+      }
+
+    } catch (Exception e) {
+      return ResponseEntity.badRequest().body("Error al eiminar la categoria con id : " + id + e.getMessage());
     }
   }
 

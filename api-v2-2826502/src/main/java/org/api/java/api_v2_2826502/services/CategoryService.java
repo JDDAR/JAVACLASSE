@@ -51,4 +51,15 @@ public class CategoryService {
     }
   }
 
+  // ELIMINADO CATEGORIA ***************************************************
+  @Transactional
+  public boolean eliminarCategoria(Long id) {
+    Optional<Category> category = repository.findById(id);
+    if (category.isPresent()) {
+      repository.deleteById(id);
+      return true;
+    }
+    return false;
+  }
+
 }

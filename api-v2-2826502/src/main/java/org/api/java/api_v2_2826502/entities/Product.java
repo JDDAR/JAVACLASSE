@@ -19,10 +19,10 @@ public class Product {
   private Long id;
 
   @NotBlank(message = "El nombre No debe tener espacios en blanco")
-  @NotEmpty(message = "El nombre No puede estar bacio ")
+  @NotEmpty(message = "El nombre No puede estar vacio ")
   private String name;
 
-  @Size(min = 100, max = 500, message = "El numero de caracteries excritos estan fuera de rango 100 - 1000 caracteres")
+  @Size(min = 100, max = 500, message = "El numero de caracteries excritos estan fuera de rango 100 - 500 caracteres")
   @NotEmpty(message = "No deben estar vacio")
   private String description;
 

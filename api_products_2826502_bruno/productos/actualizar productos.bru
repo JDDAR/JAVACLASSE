@@ -5,19 +5,24 @@ meta {
 }
 
 put {
-  url: http://localhost:8081/api/products/2
+  url: http://localhost:8081/api/products/9
   body: json
-  auth: none
+  auth: basic
 }
 
 headers {
   Content-Type: application/json
 }
 
+auth:basic {
+  username: user
+  password: fbf71480-cdb0-47e6-a81e-fc671f8053c9
+}
+
 body:json {
   {
-    "name": "cambio de nombre",
-    "description": "cambio descripcion",
+    "name": "cambio de nombre de este producto ",
+    "description": "cambio descripcioncambio descripcioncambio descripcioncambio descripcioncambio descripcioncambio descripcioncambio descripcioncambio descripcioncambio descripcioncambio descripcion",
     "price": 10.0
   }
 }

@@ -7,17 +7,22 @@ meta {
 post {
   url: http://localhost:8081/api/products
   body: json
-  auth: none
+  auth: basic
 }
 
 headers {
   Content-Type: application/json
 }
 
+auth:basic {
+  username: user
+  password: fbf71480-cdb0-47e6-a81e-fc671f8053c9
+}
+
 body:json {
   {
-    "name" : " ",
-    "description": " ",
-    "price": 80.9
+    "name" : "Celular  ROJO COLORES MUCHOS ",
+    "description": "Celular rojo super poderoso nose que Celular rojo super poderoso nose que Celular rojo super poderoso nose que",
+    "price": 80.99
   }
 }

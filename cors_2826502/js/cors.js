@@ -13,6 +13,18 @@ const mostrarProductosCards = (productos) => {
     const cardImg = document.createElement("div");
     cardImg.classList.add("card-img");
 
+    // Crear el `span` para el desenfoque
+    const cardBlur = document.createElement("span");
+    cardBlur.classList.add("cardBlur");
+
+    //Creando el src para la imagen
+    const urlImg = document.createElement("img");
+    urlImg.src = producto.urlImg;
+
+    cardImg.appendChild(urlImg);
+    cardImg.appendChild(cardBlur);
+    cardImg.style.backgroundImage = `url(${urlImg.src})`;
+
     // Crear componente para la informacion
     const cardInfo = document.createElement("div");
     cardInfo.classList.add("card-info");

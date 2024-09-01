@@ -18,11 +18,13 @@ public class Product {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  private String urlImg;
+
   @NotBlank(message = "El nombre No debe tener espacios en blanco")
   @NotEmpty(message = "El nombre No puede estar vacio ")
   private String name;
 
-  @Size(min = 10, max = 50, message = "El numero de caracteries excritos estan fuera de rango 100 - 500 caracteres")
+  @Size(min = 10, max = 500, message = "El numero de caracteries excritos estan fuera de rango 100 - 500 caracteres")
   @NotEmpty(message = "No deben estar vacio")
   private String description;
 
@@ -36,6 +38,14 @@ public class Product {
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  public String getUrlImg() {
+    return urlImg;
+  }
+
+  public void setUrlImg(String urlImg) {
+    this.urlImg = urlImg;
   }
 
   public String getName() {

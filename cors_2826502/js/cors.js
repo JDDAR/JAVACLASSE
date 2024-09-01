@@ -1,41 +1,58 @@
-const productos = {} 
-const contenedorProductos = document.querySelector('#cards');
+const contenedorProductos = document.querySelector("#cards");
 
-const mostrarProductosCards = () => {
-    
-    //Escribir instrucciones ara manipular el dom de tal manera que en el contenedor se muestre la informacion
-    for(const producto in productos){
-        const productoInfo = productos[producto];
-        const card = document.createElement("section").classList.add("card");
+const mostrarProductosCards = (productos) => {
+  // Limpiar el contenedor antes de agregar nuevas tarjetas
+  contenedorProductos.innerHTML = "";
 
-        card.innerHTML = ` <h3>${productoInfo.name} </h3>`;
-        contenedorProductos.appendChild(card)
-     }
-}
+  // Iterar sobre los productos para crear y mostrar las tarjetas
+  for (const producto of productos) {
+    const card = document.createElement("div");
+    card.classList.add("card");
 
-const obtener = async() => {
+    // Crear y añadir elementos dentro de la tarjeta
+    const cardImg = document.createElement("div");
+    cardImg.classList.add("card-img");
 
-    //Definiendo url del endpoint a consumir 
-    const url = "http://localhost:8081/api/products"
-    
-    //Definiendo credenciasles 
-    const username = "custom"
-    const password = "custom"
+    // Crear componente para la informacion
+    const cardInfo = document.createElement("div");
+    cardInfo.classList.add("card-info");
 
-    //Definimos un objeto para contener las opciones de conexion 
-    //Se utilizara para el metodo fetch
-    const options    = {
-        method: "GET",
-        headers: {
-            "Authorization" : "Basic " + btoa(`${username}:${password}`),
-        }
-    }
-    //Utilizaos el fetch para conectarnos 
-    const respuesta = await fetch(url, options)
-    const productos = await respuesta.json()
-    
-    mostrarProductosCards(productos)
-    console.log(productos)
-    
-}
+    cardInfo.innerHTML = `
+            <h3><span>${producto.name}</span></h3>
+            <p><span>${producto.description || "descripcion sin datos"}</span></p>
+            <h4>$ ${producto.price || "Precio no proporcionado"}</h4>
+        `;
+
+    // Añadir los elementos (Imagen e info ) a la tarjeta
+    card.appendChild(cardImg);
+    card.appendChild(cardInfo);
+
+    // Añadir la card al contenedor
+    contenedorProductos.appendChild(card);
+  }
+};
+
+const obtener = async () => {
+  //Definiendo url del endpoint a consumir
+  const url = "http://localhost:8081/api/products";
+
+  //Definiendo credenciasles
+  const username = "custom";
+  const password = "custom";
+
+  //Definimos un objeto para contener las opciones de conexion
+  //Se utilizara para el metodo fetch
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: "Basic " + btoa(`${username}:${password}`),
+    },
+  };
+  //Utilizaos el fetch para conectarnos
+  const respuesta = await fetch(url, options);
+  const productosData = await respuesta.json();
+
+  mostrarProductosCards(productosData);
+  console.log(productosData);
+};
 obtener();

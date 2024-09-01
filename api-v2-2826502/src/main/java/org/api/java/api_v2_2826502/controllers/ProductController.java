@@ -23,7 +23,7 @@ public class ProductController {
   // Endpoint ************
   // listar todos los productos
   @GetMapping("/products")
-  @CrossOrigin(origins = "http://127.0.0.1:5500/")
+  @CrossOrigin(origins = "http://127.0.0.1:8080/")
   public ResponseEntity<List<Product>> getProducts() { // Respuesta adaptable
     return ResponseEntity.ok().body(servicio.findAll()); // Response con codigo 200 ->
   }
@@ -47,7 +47,7 @@ public class ProductController {
   // endpoint ************************************************************* CREAR
   // crear un producto
   @PostMapping("/products")
-  @CrossOrigin(origins = "http://127.0.0.1:5500")
+  @CrossOrigin(origins = "http://127.0.0.1:8080/")
   public ResponseEntity<?> crearProducto(@Valid @RequestBody Product product,
       BindingResult bindingResult) { // BindingResul siempre despues deñ requestBody
     if (bindingResult.hasErrors()) {

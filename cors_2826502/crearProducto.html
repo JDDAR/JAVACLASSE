@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear producto</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <section class="container">
+    <main>
+        <h1>CREAR PROUCTO</h1>
+        <a href="index.html">Ver productos</a>
+    </main>
+    <hr>
+    <form id="formulario">
+        <label for="nombre">nombre</label>
+        <input type="text" id="nombreProducto" placeholder="Nombre del producto">
+
+        <label for="descipcion">descripcion</label>
+        <input type="text" id="descripcionProducto" placeholder="descripcion">
+
+        <label for="precio">Precio</label>
+        <input type="text" id="precioProducto" placeholder="Precio">
+
+        <button type="submit">CREAR</button>
+    </form>
+
+</section>
+<div id="mensaje">
+    <section class="mensajeText">
+        <h4>Producto guardado con exito</h4>
+        <a href="index.html" class="btn-exit">Ver Productos</a>
+    </section>
+</div>
+<script src="js/post.js"></script>
+</body>
+</html>

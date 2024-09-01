@@ -47,7 +47,7 @@ public class ProductController {
   // endpoint ************************************************************* CREAR
   // crear un producto
   @PostMapping("/products")
-
+  @CrossOrigin(origins = "http://127.0.0.1:5500")
   public ResponseEntity<?> crearProducto(@Valid @RequestBody Product product,
       BindingResult bindingResult) { // BindingResul siempre despues deñ requestBody
     if (bindingResult.hasErrors()) {

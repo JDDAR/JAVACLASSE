@@ -13,23 +13,43 @@
         <a href="index.html">Ver productos</a>
       </main>
       <hr />
-      <form id="formulario">
-        <label for="nombre">nombre</label>
-        <input
-          type="text"
-          id="nombreProducto"
-          placeholder="Nombre del producto"
-        />
+      <div class="content">
+        <form id="formulario">
+          <label for="urlImg">URL Imagen</label>
+          <input type="text" id="urlImg" placeholder="URL de la imagen " />
 
-        <label for="descipcion">descripcion</label>
-        <input type="text" id="descripcionProducto" placeholder="descripcion" />
+          <label for="nombre">nombre</label>
+          <input
+            type="text"
+            id="nombreProducto"
+            placeholder="Nombre del producto"
+          />
 
-        <label for="precio">Precio</label>
-        <input type="text" id="precioProducto" placeholder="Precio" />
+          <label for="descipcion">descripcion</label>
+          <input
+            type="text"
+            id="descripcionProducto"
+            placeholder="descripcion"
+          />
 
-        <button type="submit">CREAR</button>
-      </form>
+          <label for="precio">Precio</label>
+          <input type="text" id="precioProducto" placeholder="Precio" />
+
+          <button type="submit">CREAR</button>
+        </form>
+        <div class="cardForm">
+          <div class="card cardFormPrev">
+            <div class="card-img"></div>
+            <div class="card-info">
+              <h3 id="info-nombreProducto"></h3>
+              <p id="info-descripcion"></p>
+              <h4 id="info-precio"></h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
     <div id="mensaje">
       <div class="mensajeText">
         <h4>Producto guardado con exito</h4>
@@ -39,4 +59,3 @@
     <script src="js/post.js"></script>
   </body>
 </html>
-

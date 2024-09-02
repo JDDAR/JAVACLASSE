@@ -18,7 +18,7 @@ public class Product {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String urlImg;
+  private String url_img;
 
   @NotBlank(message = "El nombre No debe tener espacios en blanco")
   @NotEmpty(message = "El nombre No puede estar vacio ")
@@ -40,12 +40,12 @@ public class Product {
     this.id = id;
   }
 
-  public String getUrlImg() {
-    return urlImg;
+  public String getUrl_img() {
+    return url_img;
   }
 
-  public void setUrlImg(String urlImg) {
-    this.urlImg = urlImg;
+  public void setUrlImg(String url_img) {
+    this.url_img = url_img;
   }
 
   public String getName() {

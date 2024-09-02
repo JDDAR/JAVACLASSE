@@ -19,7 +19,7 @@ const mostrarProductosCards = (productos) => {
 
     //Creando el src para la imagen
     const urlImg = document.createElement("img");
-    urlImg.src = producto.urlImg;
+    urlImg.src = producto.url_img;
 
     cardImg.appendChild(urlImg);
     cardImg.appendChild(cardBlur);

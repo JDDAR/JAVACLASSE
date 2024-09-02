@@ -9,45 +9,49 @@
   <body>
     <section class="container">
       <main>
-        <h1>CREAR PROUCTO</h1>
+        <h1>ADMIN</h1>
         <a href="index.html">Ver productos</a>
       </main>
       <hr />
-      <div class="content">
-        <form id="formulario">
-          <label for="urlImg">URL Imagen</label>
-          <input type="text" id="urlImg" placeholder="URL de la imagen " />
+      <section class="content">
+        <h3>Crear Producto</h3>
+        <div class="contentForm">
+          <form id="formulario">
+            <label for="urlImg">URL Imagen</label>
+            <input type="text" id="urlImg" placeholder="URL de la imagen " />
 
-          <label for="nombre">nombre</label>
-          <input
-            type="text"
-            id="nombreProducto"
-            placeholder="Nombre del producto"
-          />
+            <label for="nombre">nombre</label>
+            <input
+              type="text"
+              id="nombreProducto"
+              placeholder="Nombre del producto"
+            />
 
-          <label for="descipcion">descripcion</label>
-          <input
-            type="text"
-            id="descripcionProducto"
-            placeholder="descripcion"
-          />
+            <label for="descipcion">descripcion</label>
+            <input
+              type="text"
+              id="descripcionProducto"
+              placeholder="descripcion"
+            />
 
-          <label for="precio">Precio</label>
-          <input type="text" id="precioProducto" placeholder="Precio" />
+            <label for="precio">Precio</label>
+            <input type="text" id="precioProducto" placeholder="Precio" />
 
-          <button type="submit">CREAR</button>
-        </form>
-        <div class="cardForm">
-          <div class="card cardFormPrev">
-            <div class="card-img"></div>
-            <div class="card-info">
-              <h3 id="info-nombreProducto"></h3>
-              <p id="info-descripcion"></p>
-              <h4 id="info-precio"></h4>
+            <button type="submit">CREAR</button>
+          </form>
+          <div class="cardForm">
+            <h5>Previsualizacion</h5>
+            <div class="card cardFormPrev">
+              <div class="card-img"></div>
+              <div class="card-info">
+                <h3 id="info-nombreProducto"></h3>
+                <p id="info-descripcion"></p>
+                <h4 id="info-precio"></h4>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </section>
 
     <div id="mensaje">
